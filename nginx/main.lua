@@ -10,7 +10,7 @@ end
 local cookie = ngx.var.cookie_sid
 local res, err = red:get(cookie)
 if res then
-    ngx.var.pass = "http://127.0.0.1/contents"
+    ngx.var.pass = "http://webapp:3000/"
     return
 end
 
@@ -36,4 +36,4 @@ if not ok then
     return
 end
 ngx.header['Set-Cookie'] = "sid=" .. session_val .. "; path=/"
-ngx.var.pass = "http://127.0.0.1/contents"
+ngx.var.pass = "http://webapp:3000/"

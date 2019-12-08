@@ -7,6 +7,9 @@ services:
     depends_on:
       - keycloak
       - redis
+      - webapp
+  webapp:
+    build: ./webapp
   keycloak:
     build: ./keycloak
     ports:
