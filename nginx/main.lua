@@ -16,7 +16,7 @@ end
 
 local opts = {
     ssl_verify = "no",
-    redirect_uri = "http://localhost/private/callback",
+    redirect_uri = "http://localhost/cb",
     discovery = "http://keycloak:8080/auth/realms/demo/.well-known/openid-configuration",
     client_id = "sample-app",
     client_secret = "d59cc875-2546-4bc6-81a9-f34ceb82f662"

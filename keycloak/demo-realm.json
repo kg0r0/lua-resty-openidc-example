@@ -401,7 +401,7 @@
     "enabled" : true,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "d59cc875-2546-4bc6-81a9-f34ceb82f662",
-    "redirectUris" : [ "http://localhost/private/callback" ],
+    "redirectUris" : [ "http://localhost/cb" ],
     "webOrigins" : [ ],
     "notBefore" : 0,
     "bearerOnly" : false,
