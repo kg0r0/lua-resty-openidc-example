@@ -1,6 +1,13 @@
 # lua-resty-openidc-example
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Table of Contents
+
+- [Run](#run)
+- [Usage](#usage)
+- [Info](#info)
+- [References](#references)
+
 ## Run
 ```
 $ docker-compose build
