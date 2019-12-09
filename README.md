@@ -10,6 +10,8 @@
 - [References](#references)
 
 ## Overview
+Implementation of NGINX as relying party for OpenID Connect authentication :traffic_light:
+
 ![lua_resty_openidc_diagram](https://user-images.githubusercontent.com/33596117/70452896-38c08800-1aeb-11ea-96c1-6c4f4899769d.png)
 
 ## Run
@@ -42,3 +44,4 @@ $ docker-compose up -d
 
 ## References
 - https://github.com/zmartzone/lua-resty-openidc
+- https://github.com/nginxinc/nginx-openid-connect
