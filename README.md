@@ -12,7 +12,7 @@
 ## Overview
 Implementation of NGINX as relying party for OpenID Connect authentication :traffic_light:
 
-![lua_resty_openidc_diagram](https://user-images.githubusercontent.com/33596117/70452896-38c08800-1aeb-11ea-96c1-6c4f4899769d.png)
+![lua_resty_openidc_diagram](https://user-images.githubusercontent.com/33596117/71304146-e3974700-2405-11ea-86bb-66f1119447ab.png)
 
 ## Run
 ```
