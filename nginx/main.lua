@@ -36,4 +36,8 @@ if not ok then
     return
 end
 ngx.header['Set-Cookie'] = "sid=" .. session_val .. "; path=/"
-ngx.var.pass = "http://webapp:3000/"
+if ngx.req.get_headers()["X-Requested-With"] then
+    ngx.exit(ngx.HTTP_OK)
+    return
+end
+ngx.redirect(ngx.var.request_uri)
