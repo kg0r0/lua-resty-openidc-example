@@ -14,6 +14,16 @@ if res then
     return
 end
 
+local is_xhr = false
+if ngx.req.get_headers()["X-Requested-With"] == "XMLHttpRequest" then
+    is_xhr = true 
+end
+
+if is_xhr then
+    ngx.exit(ngx.HTTP_UNAUTHORIZED)
+    return
+end
+
 local opts = {
     ssl_verify = "no",
     redirect_uri = "http://localhost/cb",
@@ -36,7 +46,7 @@ if not ok then
     return
 end
 ngx.header['Set-Cookie'] = "sid=" .. session_val .. "; path=/"
-if ngx.req.get_headers()["X-Requested-With"] then
+if is_xhr then
     ngx.exit(ngx.HTTP_OK)
     return
 end
