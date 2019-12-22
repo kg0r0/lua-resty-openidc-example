@@ -45,3 +45,4 @@ $ docker-compose up -d
 ## References
 - https://github.com/zmartzone/lua-resty-openidc
 - https://github.com/nginxinc/nginx-openid-connect
+- https://github.com/bungle/lua-resty-session
