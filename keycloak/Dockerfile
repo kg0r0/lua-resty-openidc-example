@@ -1,4 +1,4 @@
-FROM jboss/keycloak:4.8.3.Final
+FROM jboss/keycloak:12.0.0
 
 COPY *.json /opt/jboss/import/
 
