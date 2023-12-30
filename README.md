@@ -1,6 +1,5 @@
 # lua-resty-openidc-example
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![docker-compose](https://github.com/kg0r0/lua-resty-openidc-example/actions/workflows/main.yml/badge.svg)](https://github.com/kg0r0/lua-resty-openidc-example/actions/workflows/main.yml)
 
 ## Table of Contents
 - [Overview](#overview)
