@@ -1,14 +1,16 @@
-FROM jboss/keycloak:12.0.0
+FROM quay.io/keycloak/keycloak:23.0.1 as builder
 
-COPY *.json /opt/jboss/import/
+ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-EXPOSE 8080
+WORKDIR /opt/keycloak
 
-ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
+RUN keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias server -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore conf/server.keystore
+RUN /opt/keycloak/bin/kc.sh build
 
-# Export
-#CMD ["-b", "0.0.0.0", "-Dkeycloak.migration.action=export", "-Dkeycloak.migration.provider=dir", "-Dkeycloak.migration.dir=/tmp/"]
-# Import
-CMD ["-b", "0.0.0.0", "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=dir", "-Dkeycloak.migration.dir=/opt/jboss/import/", "-Dkeycloak.migration.strategy=OVERWRITE_EXISTING" ]
-# Normal
-#CMD ["-b", "0.0.0.0"]
+COPY import/ /opt/keycloak/data/import
+
+RUN /opt/keycloak/bin/kc.sh import --dir=/opt/keycloak/data/import/ --override true; exit 0
+
+ENV KC_HOSTNAME=localhost
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
